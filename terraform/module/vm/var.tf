@@ -62,9 +62,9 @@ variable "vm_family" {
 variable "mnt" {
   type = map(string)
   default = {
-    name = "mnt",
+    #name = "",
     cores= "2" ,
-    memory="2",
+    memory="4",
     core_fraction="5",
     size= "10",
     type= "network-hdd"

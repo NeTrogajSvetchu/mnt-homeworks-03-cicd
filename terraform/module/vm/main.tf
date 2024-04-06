@@ -2,8 +2,9 @@ data "yandex_compute_image" "centos" {
   family = var.vm_family
 }
 resource "yandex_compute_instance" "mnt" {
+    count = "2"
     platform_id = var.platform_id 
-    name          = var.mnt.name  
+    name          = "vm-${count.index + 1}"
      resources {
     cores         = var.mnt.cores
     core_fraction = var.mnt.core_fraction
@@ -28,8 +29,8 @@ resource "yandex_compute_instance" "mnt" {
   }
   
   metadata = {
- #   user-data = file("${path.module}/cloud_config.yaml")
+    user-data = file("${path.module}/cloud_config.yaml")
     serial-port-enable = var.metadata.serial-port-enable
-    ssh-keys           = "${local.ssh_key}"
+    ssh-keys           = "user:${local.ssh_key}"
   }
 }
