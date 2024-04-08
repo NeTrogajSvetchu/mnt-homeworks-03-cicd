@@ -22,5 +22,31 @@
 </versioning>
 </metadata>
 
-5. Сломалась виртуальная машина после перезагрузки)
-   Загружу решение по Maven завтра.
+5. pom.xml
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.netology.app</groupId>
+  <artifactId>simple-app</artifactId>
+  <version>1.0-SNAPSHOT</version>
+   <repositories>
+    <repository>
+      <id>my-repo</id>
+      <name>maven-public</name>
+      <url>http://62.84.116.110:8081/repository/maven-public/</url>
+    </repository>
+  </repositories>
+  <dependencies>
+   <dependency>
+      <groupId>netology</groupId>
+      <artifactId>our-dependency</artifactId>
+      <version>8_1022</version>
+      <classifier>distrib</classifier>
+      <type>jar</type>
+    </dependency>
+  </dependencies>
+</project>
+
+
+
+
